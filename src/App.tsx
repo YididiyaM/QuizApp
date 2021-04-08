@@ -45,6 +45,18 @@ function App() {
     if (!gameOver) {
       //User answer
       const answer = e.currentTarget.value;
+      //Check answer against correct value
+      const correct = questions[number].correct_answer === answer;
+      //Add score if answer is right
+      if (correct) setScore((prev) => prev + 1);
+      //Save answer in the array for user answers
+      const answerObject = {
+        question: questions[number].question,
+        answer,
+        correct,
+        correctAnswer: questions[number].correct_answer,
+      };
+      setUserAnswers((prev) => [...prev, answerObject]);
     }
   };
 
