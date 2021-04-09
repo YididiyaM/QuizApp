@@ -24,8 +24,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  > p {
-    color: #fff;
+  p {
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
   }
 
   .score {
